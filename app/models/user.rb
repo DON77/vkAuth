@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   def self.new_with_session(params, session)
     super.tap do |user|
-      if data = session["devise.vkontakte_data"] && session["devise.vkontakte_data"]["extra"]["raw_info"]
+      if data == session["devise.vkontakte_data"] && session["devise.vkontakte_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
       end
     end
@@ -19,6 +19,7 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name 
       user.image = auth.info.image
+      user.token = auth.credentials.token
     end
   end
 end

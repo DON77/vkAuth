@@ -2,9 +2,7 @@
 <%= current_user.inspect %>
   <div>Здравствуйте, <%= current_user.name %> </div>
   <%= image_tag(current_user.image) %>
-    <%= VK::Application.new(app_id: "6642807",
-                            version: '5.80',
-                            access_token: "623e4d0f623e4d0f623e4d0f12625b11786623e623e4d0f3967876682761d85e18a7b56").get_online(uid: current_user.uid, v: '5.1') %>
+    <%= current_user.inspect %>
 <% end %>
 
 <% unless current_user %>
