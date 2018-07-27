@@ -3,6 +3,12 @@
   <div class="personal">Здравствуйте, <%= current_user.name %>
     <%= image_tag(current_user.image) %>
   </div>
+
+    <% @vk = VkontakteApi::Client.new %>
+    <% @friends = @vk.friends.get(user_ids: current_user.uid, count: "5", access_token: current_user.token , v: "5.1", fields: ["photo_50"]) %>
+    <% @friends.items.each do |friend| %>
+        <%= friend.inspect %>
+    <% end %>
 <% end %>
 
 <% unless current_user %>
