@@ -3,8 +3,12 @@
   <div>Здравствуйте, <%= current_user.name %> </div>
   <%= image_tag(current_user.image) %>
 
-    <%= @friends.inspect %>
-    <%= @friends %>
+
+  <%  @vk = VkontakteApi::Client.new %>
+  <%  @friends = @vk.friends.get(user_ids: @user.uid, count: "5") %>
+  <% @friends.items.each do |friend| %>
+        <%= friend.first_name %>
+  <% end %>
 
 <% end %>
 
