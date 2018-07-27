@@ -24,6 +24,8 @@
     width: auto;
     max-width: 200px;
     max-height: 200px;
+    border: hidden;
+    border-radius: 7%;
 }
 
 .global{
