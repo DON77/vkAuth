@@ -1,9 +1,6 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def vkontakte
     @user = User.from_omniauth(request.env['omniauth.auth'])
-    @vk = VkontakteApi::Client.new
-
-
 #    <%= VK::Application.new(app_id: "6642807",
 #                            version: '5.80',
 #                            access_token: current_user.token).getOnline(uid: current_user.uid,
