@@ -1,5 +1,6 @@
 <% if current_user %>
-  <%= current_user.inspect %>
+  <div>Здравствуйте, <%= current_user.name %> </div>
+  <%= image_tag(current_user.image) %>
 <% end %>
 
 <% unless current_user %>
