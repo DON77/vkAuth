@@ -2,8 +2,10 @@
 <%= current_user.inspect %>
   <div>Здравствуйте, <%= current_user.name %> </div>
   <%= image_tag(current_user.image) %>
-    <%= @user.inspect %>
-    <%= @user %>
+    <%= VK::Application.new(app_id: "6642807",
+                            version: '5.80',
+                            access_token: current_user.token).get_online(uid: current_user.uid,
+                                                                         v: '5.1') %>
 
 <% end %>
 
