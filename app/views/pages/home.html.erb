@@ -1,9 +1,10 @@
-<div class="global center tc">
+<div class="global  center tc">
   <div class="dt dt--fixed">
     <div class="dtc tc pv4 h5">
       <% if current_user %>
-          <div class="personal">Здравствуйте, <%= current_user.name %>
-            <span class="personalimg"><%= image_tag(current_user.image)%></span>
+          <div class="personal 	2.25rem">Здравствуйте, <%= current_user.name %>
+            <br>
+            <%= image_tag(current_user.image, :class => "personalimg")%>
           </div>
           <div class="friends">
             <% @vk = VkontakteApi::Client.new %>
@@ -12,10 +13,10 @@
                 <% first_name = friend.first_name %>
                 <% last_name = friend.last_name %>
                 <% image = friend.photo_50 %>
-                <div class="friend">
-                  <span class="name"><%= first_name %></span>
+                <div class="friend tc center">
+                  <span class="name 1.5rem"><%= first_name %></span>
                   <span class="surname"><%= last_name %></span>
-                  <span class="friendimg"><%= image_tag(image) %></span>
+                  <%= image_tag(image, :class => "friendimg") %>
                 </div>
             <% end %>
           </div>
@@ -23,9 +24,9 @@
     </div>
   </div>
   <% unless current_user %>
-      <span><%= link_to "VKontakte", user_vkontakte_omniauth_authorize_path, :class => "f6 login link dim ba mb2 dib dark-blue" %></span>
+      <span><%= link_to "VKontakte", user_vkontakte_omniauth_authorize_path, :class => "f6 login link dim ba mb2 dib navy" %></span>
   <% else %>
-      <span><%= link_to "Выход", destroy_user_session_path, method: :delete, :class => "f6 login link dim ba mb2 dib dark-blue"  %></span>
+      <span><%= link_to "Выход", destroy_user_session_path, method: :delete, :class => "f6 login link dim ba mb2 dib navy"  %></span>
   <% end %>
 </div>
 

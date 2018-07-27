@@ -4,13 +4,17 @@
     <title>VkAuth</title>
     <%= csrf_meta_tags %>
 
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <body class="washed-red bg-blue">
+    <!--<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
+    <div id="particles-js"></div>
+    <%= javascript_include_tag 'particles', 'application'%>
     <%= yield %>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>-->
   </body>
 </html>

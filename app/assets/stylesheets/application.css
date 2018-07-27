@@ -15,6 +15,13 @@
  *= require tachyons
  */
 
+.personalimg{
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+}
+
 .global{
     display: flex;
     flex-direction: column;
@@ -22,4 +29,27 @@
 
 .login{
     padding: 7px;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.friendimg{
+    border: solid;
+    border-radius: 50% ;
+}
+.name{}
+.surname{}
+.friend{
+    padding:5px;
+}
+.friends{
+    border: solid;
+    border-radius: 7%;
 }
