@@ -9,19 +9,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 #                            access_token: current_user.token).getOnline(uid: current_user.uid,
 #                                                                         v: '5.1') %>
 
-#    <% first_name = item.first_name %>
-#            <% last_name = item.last_name %>
-#    <% image = item.photo_50 %>
-#            <div>
-#    <span>
-#    <%= first_name %>
-#              </span>
-#              <span>
-#                <%= last_name %>
-#    </span>
-#             <%= image_tag(image) %>
-#            </div>
-
     @friends = @vk.friends.get(user_ids: @user.uid, count: "5")
     if @user.persisted?
       sign_in_and_redirect @user, :event => :authentication

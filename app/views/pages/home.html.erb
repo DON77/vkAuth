@@ -1,17 +1,26 @@
 <% if current_user %>
-<%= current_user.inspect %>
-  <div>Здравствуйте, <%= current_user.name %> </div>
-  <%= image_tag(current_user.image) %>
+  <div class="personal">Здравствуйте, <%= current_user.name %>
+    <%= image_tag(current_user.image) %>
+  </div>
 
 
   <% @vk = VkontakteApi::Client.new %>
   <% @friends = @vk.friends.get(user_ids: current_user.uid, count: "5", access_token: current_user.token, v: "5.1") %>
   <% @friends.items.each do |friend| %>
-        <% @friend_info = @vk.users.get(user_ids: friend, count: "5", access_token: current_user.token, v: "5.1") %>
-
-        <%= @friend_info.inspect %>
+        <% @friend_info = @vk.users.get(user_ids: friend, count: "5", access_token: current_user.token, v: "5.1", fields: "photo_50") %>
         <% @friend_info.each do |item| %>
             <%= item.inspect %>
+            <% first_name = item.first_name %>
+            <% last_name = item.last_name %>
+            <div class="friends">
+              <span class="first">
+                <%= first_name %>
+              </span>
+              <span class="last">
+                <%= last_name %>
+              </span>
+            </div>
+
         <% end %>
   <% end %>
 
