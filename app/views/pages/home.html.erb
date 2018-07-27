@@ -23,8 +23,10 @@
     </div>
   </div>
   <% unless current_user %>
-      <span><%= link_to "VKontakte", user_vkontakte_omniauth_authorize_path, :class => "f6 login link dim ba mb2 dib navy" %></span>
-      <input type="checkbox" name="remember_me" value="true">Запомнить
+      <form>
+        <span><%= link_to "VKontakte", user_vkontakte_omniauth_authorize_path, :class => "f6 login link dim ba mb2 dib navy" %></span>
+        <input type="checkbox" name="remember_me" value="true">Запомнить<br>
+      </form>
   <% else %>
       <span><%= link_to "Выход", destroy_user_session_path, method: :delete, :class => "f6 login link dim ba mb2 dib navy"  %></span>
   <% end %>
