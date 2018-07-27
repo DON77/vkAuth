@@ -9,9 +9,9 @@
   <% @friends.items.each do |friend| %>
         <% @friend_info = @vk.users.get(user_ids: friend, count: "5", access_token: current_user.token, v: "5.1", fields: "photo_50") %>
         <% @friend_info.each do |item| %>
-            <%= item.inspect %>
             <% first_name = item.first_name %>
             <% last_name = item.last_name %>
+            <% image = item.photo_50 %>
             <div class="friends">
               <span class="first">
                 <%= first_name %>
