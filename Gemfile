@@ -50,4 +50,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'omniauth-vkontakte'
+gem 'vk-ruby'
+gem 'dotenv-rails'
 
