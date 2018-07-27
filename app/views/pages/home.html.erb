@@ -4,7 +4,6 @@
       <% if current_user %>
           <div class="personal 	2.25rem">Здравствуйте, <br> <%= current_user.name %>
             <br>
-            <%= image_tag(current_user.image, :class => "personalimg")%>
           </div>
           <div class="friends dt">
             <% @vk = VkontakteApi::Client.new %>
