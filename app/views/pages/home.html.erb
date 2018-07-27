@@ -2,20 +2,20 @@
   <div class="dt dt--fixed">
     <div class="dtc tc pv4 h5">
       <% if current_user %>
-          <div class="personal 	2.25rem">Здравствуйте, <%= current_user.name %>
+          <div class="personal 	2.25rem">Здравствуйте, <br> <%= current_user.name %>
             <br>
             <%= image_tag(current_user.image, :class => "personalimg")%>
           </div>
-          <div class="friends">
+          <div class="friends dt">
             <% @vk = VkontakteApi::Client.new %>
             <% @friends = @vk.friends.get(user_ids: current_user.uid, count: "50", access_token: current_user.token , v: "5.1", fields: ["photo_50"]) %>
             <% @friends.items.sample(5).each do |friend| %>
                 <% first_name = friend.first_name %>
                 <% last_name = friend.last_name %>
                 <% image = friend.photo_50 %>
-                <div class="friend tc center">
-                  <span class="name 1.5rem"><%= first_name %></span>
-                  <span class="surname"><%= last_name %></span>
+                <div class="friend dtc tc center">
+                  <span class="name v-mid"><%= first_name %></span>
+                  <span class="surname v-mid"><%= last_name %></span>
                   <%= image_tag(image, :class => "friendimg") %>
                 </div>
             <% end %>

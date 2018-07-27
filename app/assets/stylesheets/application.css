@@ -15,11 +15,15 @@
  *= require tachyons
  */
 
+.personal{
+    font-size:24px;
+}
+
 .personalimg{
     height: auto;
     width: auto;
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .global{
@@ -41,15 +45,17 @@
 }
 
 .friendimg{
-    border: solid;
+    border: hidden;
     border-radius: 50% ;
 }
-.name{}
+.name{
+    font-size: 18px;
+}
 .surname{}
 .friend{
     padding:5px;
+    border: hidden;
+    border-radius: 5%;
 }
 .friends{
-    border: solid;
-    border-radius: 7%;
 }
