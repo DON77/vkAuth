@@ -2,6 +2,9 @@
   <div>Здравствуйте, <%= current_user.name %> </div>
   <%= image_tag(current_user.image) %>
 <% end %>
+<% if request.env['omniauth.auth'] %>
+  <%= request.env['omniauth.auth'] %>
+<% end %>
 
 <% unless current_user %>
   <%= link_to "Вход через ВКонтакте", user_vkontakte_omniauth_authorize_path %>
