@@ -1,0 +1,9 @@
+<% if current_user %>
+  <%= current.user.inspect %>
+<% end %>
+
+<% unless current_user %>
+  <%= link_to "Вход через ВКонтакте", user_vkontakte_omniauth_authorize_path %>
+<% else %>
+  <%= link_to "Выход", destroy_user_session_path, method: :delete %>
+<% end %>
