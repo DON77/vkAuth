@@ -5,8 +5,8 @@
   </div>
 
     <% @vk = VkontakteApi::Client.new %>
-    <% @friends = @vk.friends.get(user_ids: current_user.uid, count: "5000", access_token: current_user.token , v: "5.1", fields: ["photo_50"]) %>
-    <% @friends.sample(5).items.each do |friend| %>
+    <% @friends = @vk.friends.get(user_ids: current_user.uid, count: "50", access_token: current_user.token , v: "5.1", fields: ["photo_50"]) %>
+    <% @friends.items.sample(5).each do |friend| %>
         <% first_name = friend.first_name %>
         <% last_name = friend.last_name %>
         <% image = friend.photo_50 %>
