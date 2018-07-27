@@ -52,4 +52,4 @@ gem 'devise'
 gem 'omniauth-vkontakte'
 gem 'vk-ruby'
 gem 'dotenv-rails'
-
+gem 'vkontakte_api', '~> 1.4'
