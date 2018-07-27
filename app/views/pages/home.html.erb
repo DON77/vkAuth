@@ -7,7 +7,7 @@
   <% @vk = VkontakteApi::Client.new %>
   <% @friends = @vk.friends.get(user_ids: current_user.uid, count: "5", access_token: current_user.token, v: "5.1") %>
   <% @friends.items.each do |friend| %>
-        <% @friend_info = @vk.users.get(user_ids: friend, count: "5", access_token: current_user.token, v: "5.1", fields: "photo_50") %>
+        <% @friend_info = @vk.users.get(user_ids: friend, fields: "photo_50", count: "5", access_token: current_user.token, v: "5.1") %>
         <% @friend_info.each do |item| %>
             <% first_name = item.first_name %>
             <% last_name = item.last_name %>
