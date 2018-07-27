@@ -1,25 +1,31 @@
-<% if current_user %>
-    <%= current_user.inspect %>
-  <div class="personal">Здравствуйте, <%= current_user.name %>
-    <%= image_tag(current_user.image) %>
+<div class="global center tc">
+  <div class="dt dt--fixed">
+    <div class="dtc tc pv4 h5">
+      <% if current_user %>
+          <div class="personal">Здравствуйте, <%= current_user.name %>
+            <span class="personalimg"><%= image_tag(current_user.image)%></span>
+          </div>
+          <div class="friends">
+            <% @vk = VkontakteApi::Client.new %>
+            <% @friends = @vk.friends.get(user_ids: current_user.uid, count: "50", access_token: current_user.token , v: "5.1", fields: ["photo_50"]) %>
+            <% @friends.items.sample(5).each do |friend| %>
+                <% first_name = friend.first_name %>
+                <% last_name = friend.last_name %>
+                <% image = friend.photo_50 %>
+                <div class="friend">
+                  <span class="name"><%= first_name %></span>
+                  <span class="surname"><%= last_name %></span>
+                  <span class="friendimg"><%= image_tag(image) %></span>
+                </div>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
   </div>
+  <% unless current_user %>
+      <span><%= link_to "VKontakte", user_vkontakte_omniauth_authorize_path, :class => "f6 login link dim ba mb2 dib dark-blue" %></span>
+  <% else %>
+      <span><%= link_to "Выход", destroy_user_session_path, method: :delete, :class => "f6 login link dim ba mb2 dib dark-blue"  %></span>
+  <% end %>
+</div>
 
-    <% @vk = VkontakteApi::Client.new %>
-    <% @friends = @vk.friends.get(user_ids: current_user.uid, count: "50", access_token: current_user.token , v: "5.1", fields: ["photo_50"]) %>
-    <% @friends.items.sample(5).each do |friend| %>
-        <% first_name = friend.first_name %>
-        <% last_name = friend.last_name %>
-        <% image = friend.photo_50 %>
-        <div>
-          <span><%= first_name %></span>
-          <span><%= last_name %></span>
-          <%= image_tag(image) %>
-        </div>
-    <% end %>
-<% end %>
-
-<% unless current_user %>
-  <%= link_to "Вход через ВКонтакте", user_vkontakte_omniauth_authorize_path %>
-<% else %>
-  <%= link_to "Выход", destroy_user_session_path, method: :delete %>
-<% end %>

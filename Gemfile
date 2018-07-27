@@ -50,6 +50,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'omniauth-vkontakte'
-gem 'vk-ruby'
-gem 'dotenv-rails'
 gem 'vkontakte_api', '~> 1.4'
+gem 'tachyons-rails', '~> 3.0', '>= 3.0.2'

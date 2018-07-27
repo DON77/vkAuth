@@ -12,4 +12,14 @@
  *
  *= require_tree .
  *= require_self
+ *= require tachyons
  */
+
+.global{
+    display: flex;
+    flex-direction: column;
+}
+
+.login{
+    padding: 7px;
+}
