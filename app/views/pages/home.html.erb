@@ -28,11 +28,6 @@
         <br>
         <%= check_box_tag('remember_me', @remember_me) %> Запомнить
         <br>
-        <% if @remember_me %>
-            <% cookies[:remember_me] = {value: session["devise.vkontakte_data"], expires: 1.day.from_now} %>
-        <% else %>
-            <% cookies[:current_user] = {value: session["devise.vkontakte_data"], expires: 1.day.ago} %>
-        <% end %>
       </form>
   <% else %>
       <span><%= link_to "Выход", destroy_user_session_path, method: :delete, :class => "f6 login link dim ba mb2 dib navy"  %></span>
