@@ -2,7 +2,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def vkontakte
     @user = User.from_omniauth(request.env['omniauth.auth'])
     if @user.persisted?
-      session[:expires_at] = 1.hour.ago
       sign_in_and_redirect @user, :event => :authentication
       set_flash_message(:notice, :success, :kind => "Vkontakte") if is_navigational_format?
     else
@@ -14,4 +13,3 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to root_path
   end
 end
-
