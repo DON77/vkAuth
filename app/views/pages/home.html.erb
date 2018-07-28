@@ -27,6 +27,7 @@
         <span><%= link_to "VKontakte", user_vkontakte_omniauth_authorize_path, :class => "f6 login link dim ba mb2 dib navy" %></span>
         <br>
         <%= check_box_tag('remember_me', @remember_me) %> Запомнить
+        <br>
         <% if @remember_me %>
             <% cookies[:remember_me] = {value: session["devise.vkontakte_data"], expires: 1.day.from_now} %>
         <% else %>
