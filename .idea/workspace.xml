@@ -364,6 +364,9 @@
     </list>
   </component>
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="512897cc-3fcf-4107-b132-b9a53e427409" name="Default" comment="" />
