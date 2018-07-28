@@ -289,11 +289,11 @@ Devise.setup do |config|
     lang: 'ru',
     https: 1
 
-  Warden::Manager.after_authentication do |user, auth, opts|
-    if user.remember_me
-      auth.cookies[:email] = {value: user.email, expires: 2.weeks.from_now}
-    else
-      auth.cookies.delete :email
-    end
+  #Warden::Manager.after_authentication do |user, auth, opts|
+  #  if user.remember_me
+  #    auth.cookies[:email] = {value: user.email, expires: 2.weeks.from_now}
+  #  else
+  #    auth.cookies.delete :email
+  #  end
   end
 end
