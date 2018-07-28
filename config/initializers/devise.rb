@@ -295,5 +295,5 @@ Devise.setup do |config|
   #  else
   #    auth.cookies.delete :email
   #  end
-  end
+  #end
 end

@@ -26,11 +26,11 @@
       <form>
         <span><%= link_to "VKontakte", user_vkontakte_omniauth_authorize_path, :class => "f6 login link dim ba mb2 dib navy" %></span>
         <br>
-        <input type="checkbox" class="" name="remember_me" value="true">Запомнить
-        <% if remember_me %>
-          <% cookies[:remember_token] = {value: current_user.email, expires: 1.day.from_now} %>
+        <%= check_box_tag('remember_me', @remember_me) %> Запомнить
+        <% if @remember_me %>
+            <% cookies[:remember_me] = {value: session["devise.vkontakte_data"], expires: 1.day.from_now} %>
         <% else %>
-          <% cookies[:remember_token] = {value: current_user.email, expires: 1.day.ago} %>
+            <% cookies[:current_user] = {value: session["devise.vkontakte_data"], expires: 1.day.ago} %>
         <% end %>
       </form>
   <% else %>
