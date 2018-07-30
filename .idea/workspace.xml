@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="512897cc-3fcf-4107-b132-b9a53e427409" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/config/initializers/devise.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/devise.rb" afterDir="false" />
-    </list>
+    <list default="true" id="512897cc-3fcf-4107-b132-b9a53e427409" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -75,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="371">
-              <caret line="285" column="27" lean-forward="true" selection-start-line="285" selection-start-column="27" selection-end-line="285" selection-end-column="27" />
+              <caret line="285" column="27" selection-start-line="285" selection-start-column="27" selection-end-line="285" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -84,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/db/migrate/20180726231550_add_omniauth_to_users.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -302,12 +300,12 @@
       <workItem from="1532801879603" duration="931000" />
       <workItem from="1532805774153" duration="430000" />
       <workItem from="1532806291085" duration="800000" />
-      <workItem from="1532930126445" duration="1104000" />
+      <workItem from="1532930126445" duration="1368000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42355000" />
+    <option name="totallyTimeSpent" value="42619000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -509,14 +507,14 @@
     <entry file="file://$PROJECT_DIR$/db/migrate/20180726231550_add_omniauth_to_users.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
-          <caret line="285" column="27" lean-forward="true" selection-start-line="285" selection-start-column="27" selection-end-line="285" selection-end-column="27" />
+          <caret line="285" column="27" selection-start-line="285" selection-start-column="27" selection-end-line="285" selection-end-column="27" />
         </state>
       </provider>
     </entry>
