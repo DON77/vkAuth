@@ -282,7 +282,7 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   config.omniauth :vkontakte, "6642807", "N80XlirJqTofnYbZcSRd",
     callback_url: "https://salty-sea-57567.herokuapp.com/users/auth/vkontakte/callback",
-    scope: 'email, photos, friends',
+    scope: 'email, friends',
     image_size: 'original',
     redirect_url: 'https://salty-sea-57567.herokuapp.com/users/auth/vkontakte/callback',
     display: 'page',
